@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager
 {
+    [Serializable]
     public class Account
     {
         public string Platform { get; set; }

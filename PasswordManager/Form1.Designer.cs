@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +43,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Description = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -58,10 +56,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(160, 439);
             this.listBox1.TabIndex = 0;
-            // 
-            // accountsBindingSource
-            // 
-            this.accountsBindingSource.DataSource = typeof(PasswordManager.Accounts);
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
             // label1
             // 
@@ -141,6 +136,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Add Platform";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -189,11 +185,22 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Additional info";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(748, 430);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(43, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Wipe";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 465);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Description);
             this.Controls.Add(this.button3);
@@ -211,8 +218,8 @@
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,8 +240,8 @@
         private TextBox textBox1;
         private Button button2;
         private Button button3;
-        private BindingSource accountsBindingSource;
         private TextBox Description;
         private Label label5;
+        private Button button4;
     }
 }

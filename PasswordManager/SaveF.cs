@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace PasswordManager
 {
+    [Serializable]
     public class SaveF
     {
         public BindingList<Account> accList = new BindingList<Account>();
-        public List<string> PlatList = new List<string>();
+        public BindingList<string> PlatList = new BindingList<string>();
     }
 }
